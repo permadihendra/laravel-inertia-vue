@@ -12,8 +12,8 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-    <div>
-        <div class="flex flex-col min-h-screen bg-gray-100">
+    <div class="">
+        <div class="flex flex-col bg-gray-100 min-h-screen">
             <div class="flex flex-col w-full sticky top-0 z-50">
                 <nav class="bg-white border-b border-gray-100 w-full">
                     <!-- Primary Navigation Menu -->
@@ -33,11 +33,12 @@ const showingNavigationDropdown = ref(false);
                                 <div
                                     class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
                                 >
-                                    <NavLink
-                                        :href="route('dashboard')"
-                                        :active="route().current('dashboard')"
-                                    >
-                                        Dashboard
+                                    <NavLink :href="route('dashboard')">
+                                        <h1
+                                            class="font-bold text-lg text-grey-900"
+                                        >
+                                            permadiworks
+                                        </h1>
                                     </NavLink>
                                 </div>
                             </div>
@@ -193,11 +194,11 @@ const showingNavigationDropdown = ref(false);
             </div>
 
             <!-- Page Content -->
-            <div class="py-2 flex h-screen relative">
-                <div class="flex-initial h-full sm:px-2 lg:px-2">
+            <div class="py-2 flex h-full relative">
+                <div class="flex h-full sm:px-2 lg:px-2">
                     <!-- SIDEBAR -->
                     <aside
-                        class="flex flex-col w-52 h-full px-5 py-1 overflow-y-auto bg-black border-r rtl:border-r-0 rtl:border-l sm:rounded-lg"
+                        class="flex flex-col w-52 px-5 pb-12 overflow-y-auto bg-black border-r rtl:border-r-0 rtl:border-l sm:rounded-lg"
                     >
                         <div class="flex flex-col justify-between flex-1 mt-6">
                             <nav class="-mx-3 space-y-6">
@@ -272,19 +273,18 @@ const showingNavigationDropdown = ref(false);
                     </div>
                 </div>
             </div>
-
-            <footer
-                class="bg-neutral-200 text-center dark:bg-neutral-700 lg:text-left flex"
+        </div>
+        <div
+            class="bg-neutral-200 text-center dark:bg-neutral-700 lg:text-left mt-auto"
+        >
+            <div
+                class="p-4 text-center text-neutral-700 dark:text-neutral-200 self-end"
             >
-                <div
-                    class="p-4 text-center text-neutral-700 dark:text-neutral-200 self-end"
+                © 2023
+                <a class="text-neutral-800 dark:text-neutral-200" href="#"
+                    >permadiworks v1.1</a
                 >
-                    © 2023
-                    <a class="text-neutral-800 dark:text-neutral-200" href="#"
-                        >permadiworks v1.1</a
-                    >
-                </div>
-            </footer>
+            </div>
         </div>
     </div>
 </template>
