@@ -15,12 +15,13 @@ use Inertia\Inertia;
  */
 
 Route::get('/', function () {
-    return Inertia::render('Home', ['name' => "Hendra Permadi"]);
+    return Inertia::render('Home');
 });
 
 Route::get('/users', function () {
-    sleep(2);
-    return Inertia::render('Users');
+    return Inertia::render('Users', [
+        'time' => now()->toTimeString(),
+    ]);
 });
 
 Route::get('/settings', function () {
@@ -28,5 +29,5 @@ Route::get('/settings', function () {
 });
 
 Route::post('/logout', function () {
-    dd('You are logged out');
+    dd(request('foo'));
 });
